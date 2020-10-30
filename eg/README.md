@@ -51,3 +51,9 @@ RiveScript-js.
   style way (in the web application sense of the term), mapping triggers
   directly to JavaScript handlers without writing RiveScript boilerplate for
   each mapping.
+
+## Python Example by Stefan
+* navigiert in der Kommandozeile in diesen Ordner
+* führt die Python3 Shell aus (Python3)
+* Befehl: exec(open("bot.py").read())
+* In der bot.py steht der Code für das Ausführen des Fragenkatalogs in der eliza Datei
