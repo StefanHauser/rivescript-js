@@ -1,0 +1,28 @@
+> object corona python
+  import requests
+  from datetime import datetime,date,timedelta
+  url = 'https://api.covid19api.com/country/germany?'
+  today = date.today()
+  yesterday = today - timedelta(1)
+  yesterday = datetime.strftime(yesterday, '%Y-%m-%d')
+  today = datetime.strftime(today, '%Y-%m-%d')
+  _from = 'from=' + yesterday + 'T00:00:00Z'
+  _to = 'to=' + today + 'T00:00:00Z'
+  url = 'https://api.covid19api.com/country/germany?' + _from + '&' + _to
+  response = requests.get(url)
+  corona_infos = response.json()
+  current_info = corona_infos[-1]
+  param = args[0]
+  if(param=='confirmed'):
+      return current_info['Confirmed']
+  if(param=='death'):
+      return current_info['Deaths']
+  if(param=='recovered'):
+      return current_info['Recovered']
+< object
++ how many persons have died from corona in germany
+- <call>corona death</call> persons have died from Corona in Germany
++ how many confirmed corona cases are there in germany
+- Currently there are <call>corona confirmed</call> confirmed cases
++ how many recovered corona cases are there in germany
+- <call>corona recovered</call> persons have recovered from Corona in Germany
